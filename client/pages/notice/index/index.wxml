@@ -1,0 +1,72 @@
+<view>
+  <view class='tab' style="height:{{statusBarHeight}}px;line-height:{{statusBarHeight}}px;">
+    <view class="{{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">浏览过的</view>
+    <view class="{{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我创建的</view>
+    <view class="{{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">群通知</view>
+  </view>
+  <scroll-view scroll-y="true" style="height: {{scrollHeight}}px;" scroll-top="{{scrollTop}}">
+    <view>
+      <view wx:if='{{currentTab==0}}'>
+        <view wx:for="{{joinData}}" data-noticeid="{{item.noticeid}}" bindtap='gotoEnroll' class='item'>
+          <view style='font-weight:bold;'>
+            {{item.title}}
+          </view>
+          <text style='font-size:26rpx;color:#666;'>{{item.date}} </text>
+        </view>
+      </view>
+      <view wx:if='{{currentTab==1}}'>
+        <view wx:for="{{createData}}" data-noticeid="{{item.noticeid}}" bindtap='gotoEnroll' class='item'>
+          <view style='font-weight:bold;'>
+            {{item.title}}
+          </view>
+          <text style='font-size:26rpx;color:#666;'>{{item.date}} </text>
+        </view>
+      </view>
+    </view>
+    <view wx:if='{{currentTab==2}}'>
+      <view wx:if='{{groupData=="" && enterGId==""}}' style='color:gray;padding:40rpx 0;text-align:center;'>
+        从群内打开该小程序才能查看到群通知
+      </view>
+      <view wx:elif="{{groupData=='' && enterGId!=''}}" style='color:gray;padding:40rpx 0;text-align:center;'>
+        群内暂时没有群通知消息
+      </view>
+      <view wx:for="{{groupData}}" data-noticeid="{{item.noticeid}}" bindtap='gotoEnroll' class='item'>
+        <view style='font-weight:bold;'>
+          {{item.title}}
+        </view>
+        <text style='font-size:26rpx;color:#666;'>{{item.date}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view direction="all" class='creat' bindtap='creat'>
+    创建通知
+  </view>
+
+
+  <view class="page__bd">
+    <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+      <view class="weui-mask" bindtap="closeDialog"></view>
+      <view class="weui-half-screen-dialog" catchtap="stopEvent">
+        <view class="weui-half-screen-dialog__hd">
+          <view class="weui-half-screen-dialog__hd__main">
+            <text class="weui-half-screen-dialog__title" style="text-align: center;">登录提示</text>
+            <text class="weui-half-screen-dialog__subtitle" style="text-align: center;"> 作者：阿涛</text>
+          </view>
+        </view>
+        <view class="weui-half-screen-dialog__bd">
+          <view class="weui-half-screen-dialog__desc" style="text-align: center;">
+            关于本程序相关说明
+          </view>
+          <view class="weui-half-screen-dialog__tips">
+            获取用户信息只是作为本程序用户名称展示，不会用作其他用途,登录成功后会关闭该页面。 如果发现本程序功能有涉及违反小程序规定地方、请及时联系我。 邮箱：457358344@qq.com
+          </view>
+        </view>
+        <view class="weui-half-screen-dialog__ft">
+          <button type="primary" class="weui-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">微 信 登 录</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,45 @@
+<view>
+  <view class='tab' style="height:{{statusBarHeight}}px;line-height:{{statusBarHeight}}px;">
+    <view class="{{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">我参加的</view>
+    <view class="{{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我创建的</view>
+    <view class="{{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">群决定</view>
+  </view>
+  <scroll-view scroll-y="true" style="height: {{scrollHeight}}px;" scroll-top="{{scrollTop}}">
+    <view>
+      <view wx:if='{{currentTab==0}}'>
+        <view wx:for="{{joinData}}" data-voteid="{{item.voteid}}" bindtap='gotoEnroll' class='item'>
+          <view style='font-weight:bold;'>
+            {{item.title}}
+          </view>
+          <text style='font-size:26rpx;color:#666;'>{{item.date}} {{item.time}}</text>
+        </view>
+      </view>
+      <view wx:if='{{currentTab==1}}'>
+        <view wx:for="{{createData}}" data-voteid="{{item.voteid}}" bindtap='gotoEnroll' class='item'>
+          <view style='font-weight:bold;'>
+            {{item.title}}
+          </view>
+          <text style='font-size:26rpx;color:#666;'>{{item.date}} {{item.time}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if='{{currentTab==2}}'>
+      <view wx:if='{{groupData=="" && enterGId==""}}' style='color:gray;padding:40rpx 0;text-align:center;'>
+        从群内打开该小程序才能查看到群决定
+      </view>
+      <view wx:elif='{{groupData=="" && enterGId!=""}}' style='color:gray;padding:40rpx 0;text-align:center;'>
+        群内暂时没有群决定消息
+      </view>
+      <view wx:for="{{groupData}}" data-voteid="{{item.voteid}}" bindtap='gotoEnroll' class='item'>
+        <view style='font-weight:bold;'>
+          {{item.title}}
+        </view>
+        <text style='font-size:26rpx;color:#666;'>{{item.date}} {{item.time}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view direction="all" class='creat' bindtap='creat'>
+    创建决定
+  </view>
+
+</view>

@@ -1,0 +1,76 @@
+{
+	"cloudfunctionRoot": "cloud/",
+	"client": "client/",
+	"miniprogramRoot": "client/",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": true,
+		"enhance": true
+	},
+	"appid": "",
+	"projectname": "wechat-Group",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "123",
+					"pathName": "pages/notice/noticeDetail/noticeDetail",
+					"query": "",
+					"scene": "1007"
+				},
+				{
+					"id": 1,
+					"name": "pages/notice/index/index",
+					"pathName": "pages/notice/index/index",
+					"query": "",
+					"scene": 1044,
+					"shareInfo": {
+						"groupName": "测试模拟群1",
+						"shareName": "lI33uif1cAf5YfkuAO0xy60Qv8TrJKhnlskhs8pATF4@cr4dev",
+						"shareKey": "D8h8fhpz2QeUcg0D9L5FqqsWEAglfNVFobJpy3k0jVKTXxN9L7wl0OiEnjQrwl9Oniz4eFjug30VuvrP-gnpPw~~"
+					}
+				}
+			]
+		}
+	}
+}

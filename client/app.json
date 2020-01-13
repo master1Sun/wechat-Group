@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/notice/index/index",
+    "pages/notice/noticeDetail/noticeDetail",
+    "pages/notice/create/create",
+    "pages/link/index/index",
+    "pages/link/create/create",
+    "pages/link/enroll/enroll",
+    "pages/vote/index/index",
+    "pages/vote/create/create",
+    "pages/vote/choose/choose"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#338FFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "日常工具",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/notice/index/index",
+        "text": "群通知",
+        "selectedColor": "#338FFF",
+        "iconPath": "imgs/tab_01.jpg",
+        "selectedIconPath": "imgs/tab_05.jpg"
+      },
+      {
+        "pagePath": "pages/link/index/index",
+        "text": "群活动",
+        "selectedColor": "#338FFF",
+        "iconPath": "imgs/tab_02.jpg",
+        "selectedIconPath": "imgs/tab_06.jpg"
+      },
+      {
+        "pagePath": "pages/vote/index/index",
+        "text": "群决定",
+        "selectedColor": "#338FFF",
+        "iconPath": "imgs/tab_03.jpg",
+        "selectedIconPath": "imgs/tab_07.jpg"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用户手动选择地理位置"
+    }
+  }
+}
